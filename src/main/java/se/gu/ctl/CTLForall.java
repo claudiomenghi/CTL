@@ -7,11 +7,11 @@ import com.google.common.base.Preconditions;
 
 import se.gu.ctl.visitors.CTLVisitor;
 
-public class CTLExists  implements UnaryFormula<CTLFormula>,CTLStateFormula {
+public class CTLForall  implements UnaryFormula<CTLFormula>,CTLStateFormula {
 
 	private final CTLPathFormula subformula;
 
-	public CTLExists(CTLPathFormula subformula) {
+	public CTLForall(CTLPathFormula subformula) {
 		super();
 		Preconditions.checkNotNull(subformula, "The subFormula cannot be null");
 		this.subformula = subformula;
@@ -22,7 +22,7 @@ public class CTLExists  implements UnaryFormula<CTLFormula>,CTLStateFormula {
 	 */
 	@Override
 	public String toString() {
-		return "E" + this.getChild() + "";
+		return "A" + this.getChild() + "";
 	}
 	
 	/**

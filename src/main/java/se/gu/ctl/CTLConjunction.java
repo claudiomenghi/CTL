@@ -9,7 +9,7 @@ import se.gu.ctl.visitors.CTLVisitor;
 
 
 
-public class CTLConjunction extends CTLStateFormula implements BinaryFormula<CTLStateFormula> {
+public class CTLConjunction  implements BinaryFormula<CTLStateFormula>,CTLStateFormula {
 
 	private final CTLStateFormula leftChild;
 	private final CTLStateFormula rightChild;

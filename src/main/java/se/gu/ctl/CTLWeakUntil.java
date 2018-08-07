@@ -7,15 +7,14 @@ import com.google.common.base.Preconditions;
 
 import se.gu.ctl.visitors.CTLVisitor;
 
-public class CTLImplies implements BinaryFormula<CTLStateFormula>,CTLStateFormula {
+public class CTLWeakUntil implements BinaryFormula<CTLStateFormula>,CTLPathFormula {
 
 	private final CTLStateFormula subformula1;
 	private final CTLStateFormula subformula2;
-
-	private final String operator = "IMPL";
-
 	
-	public CTLImplies(CTLStateFormula subformula1, CTLStateFormula subformula2) {
+	private final String operator = "W";
+
+	public CTLWeakUntil(CTLStateFormula subformula1, CTLStateFormula subformula2) {
 		super();
 		Preconditions.checkNotNull(subformula1, "The first subformula cannot be null");
 		Preconditions.checkNotNull(subformula2, "The second subformula cannot be null");
@@ -52,7 +51,7 @@ public class CTLImplies implements BinaryFormula<CTLStateFormula>,CTLStateFormul
 	 */
 	@Override
 	public String toString() {
-		return "(" + this.subformula1 + ") " + operator + " (" + this.subformula2 + ")";
+		return "(" + this.subformula1 + ") " + operator + "( " + this.subformula2 + ")";
 	}
 	
 	/**
@@ -65,5 +64,4 @@ public class CTLImplies implements BinaryFormula<CTLStateFormula>,CTLStateFormul
 		formulae.add(subformula2);
 		return formulae;
 	}
-	
 }

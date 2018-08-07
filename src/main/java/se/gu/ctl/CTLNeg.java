@@ -7,7 +7,7 @@ import com.google.common.base.Preconditions;
 
 import se.gu.ctl.visitors.CTLVisitor;
 
-public class CTLNeg extends CTLStateFormula implements UnaryFormula<CTLStateFormula> {
+public class CTLNeg  implements UnaryFormula<CTLStateFormula>,CTLStateFormula {
 
 	// Formula f1 which is argument of the negation (\neg f1)
 	private CTLStateFormula subformula;

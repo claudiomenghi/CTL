@@ -7,14 +7,14 @@ import com.google.common.base.Preconditions;
 
 import se.gu.ctl.visitors.CTLVisitor;
 
-public class CTLNext implements UnaryFormula<CTLStateFormula>,CTLPathFormula {
+public class CTLGlobally  implements UnaryFormula<CTLStateFormula>,CTLPathFormula {
 
 	// Formula f1 which is argument of the negation (\neg f1)
 	private CTLStateFormula subformula;
 
-	private final String operator = "NEXT";
+	private final String operator = "G";
 
-	public CTLNext(CTLStateFormula subformula) {
+	public CTLGlobally(CTLStateFormula subformula) {
 		
 
 		Preconditions.checkNotNull(subformula, "The subformula cannot be null");
@@ -56,7 +56,7 @@ public class CTLNext implements UnaryFormula<CTLStateFormula>,CTLPathFormula {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		CTLNext other = (CTLNext) obj;
+		CTLGlobally other = (CTLGlobally) obj;
 		if (operator == null) {
 			if (other.operator != null)
 				return false;

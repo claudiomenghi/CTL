@@ -8,16 +8,16 @@ import se.gu.ctl.CTLStateFormula;
 import se.gu.ctl.visitors.CTLVisitor;
 import se.gu.ltl.LTLFormula;
 import se.gu.ltl.atoms.PCAtom;
-import se.gu.ltl.atoms.PLAtom;
 import se.gu.ltl.visitors.LTLVisitor;
 
-public class CTLPLAtom extends PLAtom implements CTLStateFormula {
+public class CTLPCAtom extends PCAtom implements CTLStateFormula {
 
-	public CTLPLAtom(PLAtom atom) {
-		super(atom.getRobotName(),atom.getLocationName());
+	
+	public CTLPCAtom(PCAtom condition) {
+		super(condition.getCondition());
 	}
-	public CTLPLAtom(String robotName, String locationName) {
-		super(robotName, locationName);
+	public CTLPCAtom(String condition) {
+		super(condition);
 	}
 
 	@Override
@@ -27,6 +27,8 @@ public class CTLPLAtom extends PLAtom implements CTLStateFormula {
 		formulae.add(this);
 		return formulae;
 	}
+	
+	
 
 	@Override
 	public <T> T accept(CTLVisitor<T> visitor) {

@@ -7,7 +7,7 @@ import com.google.common.base.Preconditions;
 
 import se.gu.ctl.visitors.CTLVisitor;
 
-public class CTLDisjunction extends CTLStateFormula implements BinaryFormula<CTLStateFormula> {
+public class CTLDisjunction  implements BinaryFormula<CTLStateFormula>,CTLStateFormula {
 
 	private final CTLStateFormula leftChild;
 	private final CTLStateFormula rightChild;

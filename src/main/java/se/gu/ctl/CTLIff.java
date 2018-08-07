@@ -8,7 +8,7 @@ import com.google.common.base.Preconditions;
 import se.gu.ctl.visitors.CTLVisitor;
 
 
-public class CTLIff extends CTLStateFormula implements BinaryFormula<CTLStateFormula> {
+public class CTLIff  implements BinaryFormula<CTLStateFormula>,CTLStateFormula {
 
 
 

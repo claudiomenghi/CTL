@@ -4,27 +4,22 @@ import java.util.Set;
 
 import com.google.common.base.Preconditions;
 
-import se.gu.ctl.atoms.CTLPropositionalAtom;
-import se.gu.ctl.atoms.CTLTrue;
-import se.gu.ctl.visitors.CTLVisitor;
+import se.gu.ltl.Formula;
+import se.gu.ltl.atoms.PropositionalAtom;
 
-public abstract class CTLStateFormula extends CTLFormula {
+public interface CTLStateFormula extends CTLFormula {
 
-	public static final CTLStateFormula TRUE = new CTLTrue();
 
-	public CTLStateFormula() {
-		super();
 
-	}
 
 	public static CTLStateFormula getAnd(CTLStateFormula f1, CTLStateFormula f2) {
 		Preconditions.checkNotNull(f1, "The first subformula cannot be null");
 		Preconditions.checkNotNull(f2, "The second subformula cannot be null");
 
-		if (f1.equals(CTLStateFormula.TRUE)) {
+		if (f1.equals(Formula.TRUE)) {
 			return f2;
 		}
-		if (f2.equals(CTLStateFormula.TRUE)) {
+		if (f2.equals(Formula.TRUE)) {
 			return f1;
 		}
 		return new CTLConjunction(f1, f2);

@@ -180,6 +180,13 @@
 			<version>2.2.11</version>
 		</dependency>
 
+	<dependency>
+			<groupId>se.gu</groupId>
+			<artifactId>LTL</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>com.zenjava</groupId>
 			<artifactId>javafx-maven-plugin</artifactId>
